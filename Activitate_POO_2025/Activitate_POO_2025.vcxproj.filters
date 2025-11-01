@@ -18,5 +18,11 @@
     <ClCompile Include="ActivitatePOO1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="petitie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="magazin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
