@@ -112,6 +112,13 @@ int main() {
 	cout << "Adresa: " << c2.getAdresa() << endl;
 	cout << endl;
 
+	Casa c3(true, 5.8f, 10, "adresa3");
+	cout << "Cu etaj: " << c3.getCuEtaj() << endl;
+	cout << "Amprenta sol: " << c3.getAmprentaSol() << endl;
+	cout << "Deschidere la drum: " << c3.getDeschidereLaDrum() << endl;
+	cout << "Adresa: " << c3.getAdresa() << endl;
+	cout << endl;
+
 	return 0;
 }
 
