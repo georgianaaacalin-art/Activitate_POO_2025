@@ -58,8 +58,6 @@ public:
 		if (this->numeCompanie != nullptr) {
 			delete[] this->numeCompanie;
 		}
-
-
 		this->nrAngajati = c.nrAngajati;
 		this->buget = c.buget;
 		if (c.numeCompanie != nullptr) {
@@ -101,6 +99,90 @@ public:
 
 };
 
+class Client {
+private:
+	string numeClient;
+	int varstaClient;
+	char* mail;
+
+public:
+	Client() {
+		this->numeClient = "";
+		this->varstaClient = 0;
+		this->mail = nullptr;
+	}
+
+	Client(string numeClient = "", int varstaClient = 0, const char* mail = nullptr) {
+		this->numeClient = numeClient;
+		this->varstaClient = varstaClient;
+		if (mail != nullptr) {
+			this->mail = new char[strlen(mail) + 1];
+			strcpy_s(this->mail, strlen(mail) + 1, mail);
+		}
+		else {
+			this->mail = nullptr;
+		}
+	}
+
+	Client(Client& copy1) {
+		this->numeClient = copy1.numeClient;
+		this->varstaClient = copy1.varstaClient;
+		if (copy1.mail != nullptr) {
+			this->mail = new char[strlen(copy1.mail) + 1];
+			strcpy_s(this->mail, strlen(copy1.mail) + 1, copy1.mail);
+		}
+		else {
+			this->mail = nullptr;
+		}
+	}
+
+	~Client() {
+		if (this->mail != nullptr) {
+			delete[] this->mail;
+		}
+	}
+
+	Client& operator=(Client& copy1) {
+		if (this->mail != nullptr) {
+			delete[] this->mail;
+		}
+
+		this->numeClient = copy1.numeClient;
+		this->varstaClient = copy1.varstaClient;
+		if (copy1.mail != nullptr) {
+			this->mail = new char[strlen(copy1.mail) + 1];
+			strcpy_s(this->mail, strlen(copy1.mail) + 1, copy1.mail);
+		}
+		else {
+			this->mail = nullptr;
+		}
+
+		return *this;
+	}
+
+	string getNumeClient() {
+		return this->numeClient;
+	}
+
+	int getVarsta() {
+		return this->varstaClient;
+	}
+
+	char* getMail() {
+		return this->mail;
+	}
+
+	friend ostream& operator<< (ostream& out, Client& copy1) {
+		cout << copy1.numeClient << " " << copy1.varstaClient << " " << copy1.mail << " ";
+		if (copy1.mail != nullptr) {
+			out << copy1.mail;
+		}
+
+		return out;
+	}
+
+};
+
 int main() {
 
 	Companie c1(20, 1099.50, "Microsoft");
@@ -115,4 +197,18 @@ int main() {
 	cout << "Buget: " << c2.getBuget() << endl;
 	cout << endl;
 
+	Client cl1("Ionescu", 35, "ionescu@google.com");
+	cout << "Nume client: " << cl1.getNumeClient() << endl;
+	cout << "Varsta client: " << cl1.getVarsta() << endl;
+	cout << "Mail client: " << cl1.getMail() << endl;
+	cout << endl;
+
+	Client cl2("Popescu", 25, "popescu@microsoft.com");
+	cout << "Nume client: " << cl2.getNumeClient() << endl;
+	cout << "Varsta client: " << cl2.getVarsta() << endl;
+	cout << "Mail client: " << cl2.getMail() << endl;
+	cout << endl;
+
 }
+
+

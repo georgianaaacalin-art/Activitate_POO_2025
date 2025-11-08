@@ -24,5 +24,11 @@
     <ClCompile Include="magazin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sejur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="casa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

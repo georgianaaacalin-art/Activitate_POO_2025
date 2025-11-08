@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 #include<fstream>
 #include<string>
 
@@ -148,4 +148,4 @@ public:
 		~p1;
 		cout << "dupa ~ " << endl << p1 << endl;
 	}
-};
+};*/
