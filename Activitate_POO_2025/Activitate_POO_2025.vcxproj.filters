@@ -30,5 +30,8 @@
     <ClCompile Include="casa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bicicleta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

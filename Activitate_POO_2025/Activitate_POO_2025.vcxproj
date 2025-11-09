@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ActivitatePOO1.cpp" />
+    <ClCompile Include="bicicleta.cpp" />
     <ClCompile Include="casa.cpp" />
     <ClCompile Include="magazin.cpp" />
     <ClCompile Include="petitie.cpp" />
