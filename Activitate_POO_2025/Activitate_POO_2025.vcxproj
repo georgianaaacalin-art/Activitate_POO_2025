@@ -133,6 +133,7 @@
     <ClCompile Include="magazin.cpp" />
     <ClCompile Include="petitie.cpp" />
     <ClCompile Include="sejur.cpp" />
+    <ClCompile Include="serviciiPrintare.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

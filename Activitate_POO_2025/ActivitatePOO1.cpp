@@ -9,12 +9,12 @@ using namespace std;
 class Companie {
 private:
 	const int id;
-public:
 	int nrAngajati;
 	float buget;
 	char* numeCompanie;
 	static int nrCompanii;
 
+public:
 	Companie() :id(id) {
 		this->nrAngajati = 0;
 		this->buget = 0;
@@ -77,15 +77,21 @@ public:
 		return this->nrAngajati;
 	}
 
+	void setNrAngajati(int nrAngajati) {
+		this->nrAngajati = nrAngajati;
+	}
 
 	float getBuget() {
 		return this->buget;
 	}
 
+	void setBuget(float buget) {
+		this->buget = buget;
+	}
+
 	char* getNumeCompanie() {
 		return this->numeCompanie;
 	}
-
 
 	friend ostream & operator << (ostream & out, Companie & c) {
 		out << c.nrAngajati << " " << c.buget << " " << c.numeCompanie << " ";
@@ -95,9 +101,9 @@ public:
 
 		return out;
 	}
-
-
 };
+
+class Produs;
 
 class Client {
 private:
@@ -183,6 +189,164 @@ public:
 
 };
 
+class Produs {
+
+private:
+	const int idProdus;
+	string numeProdus;
+	float pret;
+	char* descriere;
+	static int nrProduse;
+
+public:
+	Produs() : idProdus(idProdus) {
+
+		this->numeProdus = "";
+		this->pret = 0;
+		if (descriere != nullptr) {
+
+			this->descriere = new char[strlen(descriere) + 1];
+			strcpy_s(this->descriere, strlen(descriere) + 1, descriere);
+
+		}
+		else {
+
+			this->descriere = nullptr;
+
+		}
+
+	}
+
+	Produs(string numeProdus = "", float pret = 0, const char* descriere = nullptr) : idProdus(idProdus) {
+
+		this->numeProdus = numeProdus;
+		this->pret = pret;
+		if (descriere != nullptr) {
+
+			this->descriere = new char[strlen(descriere) + 1];
+			strcpy_s(this->descriere, strlen(descriere) + 1, descriere);
+
+		}
+		else {
+
+			this->descriere = nullptr;
+
+		}
+
+	}
+
+	Produs(const Produs& copie3) : idProdus(idProdus) {
+
+		this->numeProdus = copie3.numeProdus;
+		this->pret = copie3.pret;
+		if (copie3.descriere != nullptr) {
+
+			this->descriere = new char[strlen(copie3.descriere) + 1];
+			strcpy_s(this->descriere, strlen(copie3.descriere) + 1, copie3.descriere);
+
+		}
+		else {
+
+			this->descriere = nullptr;
+
+		}
+
+	}
+
+	~Produs() {
+
+		if (this->descriere != nullptr) {
+
+			delete[] this->descriere;
+
+		}
+
+	}
+
+	Produs operator=(const Produs& copie3) {
+
+		if (this->descriere != nullptr) {
+
+			delete[] this->descriere;
+
+		}
+
+		this->numeProdus = copie3.numeProdus;
+		this->pret = copie3.pret;
+		if (copie3.descriere != nullptr) {
+
+			this->descriere = new char[strlen(copie3.descriere) + 1];
+			strcpy_s(this->descriere, strlen(copie3.descriere) + 1, copie3.descriere);
+
+		}
+		else {
+
+			this->descriere = nullptr;
+
+		}
+
+		return *this;
+
+	}
+
+	string setNumeProdus(string np) {
+
+		this->numeProdus = np;
+
+	}
+	string getNumeProdus() {
+
+		return this->numeProdus;
+
+	}
+
+	float setPret(float p) {
+
+		this->pret = p;
+
+	}
+	float getPret() {
+
+		return this->pret;
+
+	}
+
+	char* getDescriere() {
+
+		return this->descriere;
+
+	}
+
+	friend ostream& operator<<(ostream& out, Produs copie3) {
+
+		out << copie3.numeProdus << " " << copie3.pret << " " << copie3.descriere << " ";
+		if (copie3.descriere != nullptr) {
+
+			out << copie3.descriere;
+
+		}
+		return out;
+	}
+};
+
+//functia pt atributul static
+int Produs::nrProduse = 0; 
+
+void verificaVarsta(Client& copy1, Produs& copie3) {
+	if (copy1.getVarsta() >= 18) {
+		cout << copy1.getNumeClient() << " Poate cumpara produsul " << copie3.getNumeProdus() << "." << endl;
+	}
+	else {
+		cout << copy1.getNumeClient() << " Nu poate cumpara produsul " << copie3.getNumeProdus() << "(minor)." << endl;
+	}
+}
+
+void estimareValoareCompanie(Companie& c) {
+	const int salariuMediu = 5000;
+	int valoare = c.getNrAngajati();
+	cout << "Estimare valoare companie: " << c.getNumeCompanie() << valoare << " lei" << endl;
+}
+
 int main() {
 
 	Companie c1(20, 1099.50, "Microsoft");
@@ -208,6 +372,25 @@ int main() {
 	cout << "Varsta client: " << cl2.getVarsta() << endl;
 	cout << "Mail client: " << cl2.getMail() << endl;
 	cout << endl;
+
+	Produs p1("Telefon", 1599.99, "Drescriere1");
+	cout << "Nume produs: " << p1.getNumeProdus() << endl;
+	cout << "Pret: " << p1.getPret() << " lei" << endl;
+	cout << "Descriere: " << p1.getDescriere() << endl;
+	cout << endl;
+
+	Produs p2("Laptop", 4799.99, "Drescriere2");
+	cout << "Nume produs: " << p2.getNumeProdus() << endl;
+	cout << "Pret: " << p2.getPret() << " lei" << endl;
+	cout << "Descriere: " << p2.getDescriere() << endl;
+	cout << endl;
+
+	estimareValoareCompanie(c1);
+	estimareValoareCompanie(c2);
+
+	verificaVarsta(cl1, p1);
+	verificaVarsta(cl2, p2);
+
 
 }
 
