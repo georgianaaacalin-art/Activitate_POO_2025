@@ -132,6 +132,7 @@
     <ClCompile Include="casa.cpp" />
     <ClCompile Include="magazin.cpp" />
     <ClCompile Include="petitie.cpp" />
+    <ClCompile Include="rochie.cpp" />
     <ClCompile Include="sejur.cpp" />
     <ClCompile Include="serviciiPrintare.cpp" />
   </ItemGroup>
