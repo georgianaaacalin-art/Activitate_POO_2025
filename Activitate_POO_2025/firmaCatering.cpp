@@ -99,20 +99,17 @@ public:
 	}
 
 	//operator++ postincrementare
-	FirmaCatering operator++(int i) {
-		FirmaCatering copie = *this;
-		this->pret++;
+FirmaCatering operator++(int) {
+	FirmaCatering copie = *this;
+	this->pret++;
+	return copie;
+}
 
-		return copie;
-	}
-
-	//operator++ preincrementare
-	FirmaCatering operator++() {
-		FirmaCatering copie2 = *this;
-		this->pret++;
-
-		return copie2;
-	}
+//operator++ preincrementare
+FirmaCatering& operator++() {
+	this->pret++;
+	return *this;
+}
 
 	//operator de comparatie <
 	bool operator<(FirmaCatering c) {
@@ -145,13 +142,13 @@ void main() {
 	cout << endl;
 
 	//apelam operatorul preincrementare
-	cout << "Pretul primei firme este: " << f2.getPret() << endl;
-	++f2;
-	cout << "Pretul primei firme este: " << f2.getPret() << endl;
-	++f2;
-	cout << "Pretul primei firme este: " << f2.getPret() << endl;
-	++f2;
-	cout << endl;
+    cout << "Pretul primei firme este: " << f1.getPret() << endl;
+    ++f1;
+	cout << "Pretul primei firme este: " << f1.getPret() << endl;
+	++f1;
+	cout << "Pretul primei firme este: " << f1.getPret() << endl;
+	++f1;
+	cout << endl;
 
 	//apelam operatorul de comparatie
 	int cantitate = 20;
