@@ -45,5 +45,8 @@
     <ClCompile Include="biblioteca.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CarteVizita.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

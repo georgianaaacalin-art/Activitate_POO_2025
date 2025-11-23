@@ -130,6 +130,7 @@
     <ClCompile Include="ActivitatePOO1.cpp" />
     <ClCompile Include="biblioteca.cpp" />
     <ClCompile Include="bicicleta.cpp" />
+    <ClCompile Include="CarteVizita.cpp" />
     <ClCompile Include="casa.cpp" />
     <ClCompile Include="firmaCatering.cpp" />
     <ClCompile Include="magazin.cpp" />
