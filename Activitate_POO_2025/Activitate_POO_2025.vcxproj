@@ -138,6 +138,7 @@
     <ClCompile Include="rochie.cpp" />
     <ClCompile Include="sejur.cpp" />
     <ClCompile Include="serviciiPrintare.cpp" />
+    <ClCompile Include="student.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
