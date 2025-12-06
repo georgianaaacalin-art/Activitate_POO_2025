@@ -134,6 +134,7 @@
     <ClCompile Include="CarteVizita.cpp" />
     <ClCompile Include="casa.cpp" />
     <ClCompile Include="firmaCatering.cpp" />
+    <ClCompile Include="laptop.cpp" />
     <ClCompile Include="magazin.cpp" />
     <ClCompile Include="petitie.cpp" />
     <ClCompile Include="rochie.cpp" />

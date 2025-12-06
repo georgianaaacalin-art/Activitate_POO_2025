@@ -54,5 +54,8 @@
     <ClCompile Include="animal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="laptop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
