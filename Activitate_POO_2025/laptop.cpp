@@ -146,5 +146,4 @@ void main() {
 	cout << "Numele laptopului 2 este: " << laptop2.getNume() << endl;
 
 	l1 += 2;
-
 }

@@ -57,5 +57,8 @@
     <ClCompile Include="laptop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="angajat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
